@@ -1,40 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Telegram Mic Guitar Tuner
+
+This is a Telegram mini-app that helps guitarists tune their guitars. It uses
+the microphone to determine the frequency of the sound and help you
+to correctly adjust each string.
+
+![Demo animation](src/assets/demo.webp)
+
+## Features
+
+- Adjusting the frequency using the microphone.
+- Standart guitar tuning.
+- Telegram theme integration.
+
+## Known issues
+
+- Some Telegram clients may not support microphone access.
 
 ## Getting Started
 
-First, run the development server:
+### Running frontend locally
 
-```bash
-npm run dev
-# or
+```shell
+# Install dependencies:
+yarn install
+
+# Start the development server:
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Connecting to telegram
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Run [ngrok](https://ngrok.com/docs/) in order to expose the local application to the Internet:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```shell
+ngrok http 3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Create a new app using [@BotFather](https://t.me/BotFather), specify the **https** link of your ngrok. You can use [this one](./src/assets/miniappcover.png) as a photo.
 
-## Learn More
+Try to open the link in Telegram.
 
-To learn more about Next.js, take a look at the following resources:
+### Running telegram bot locally \[optional\]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The telegram bot responds with a welcome message to any message.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Prepare the config:
 
-## Deploy on Vercel
+```shell
+cp .env.example .env
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create a new bot using [@BotFather](https://t.me/BotFather) if you haven't done it yet and set the correct token in [.env](.env).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Start the bot:
+
+```shell
+yarn run bot
+```
+
+Write any message to the bot:
+![Example of bot response](src/assets/bot_message.png)
+
+### Start everything in docker-compose
+
+Specify the correct `TELEGRAM_TOKEN` in [.env](.env).
+
+Start docker compose containers:
+
+```shell
+docker compose up --build
+```
+
+Expose the frontend using ngrok: [see](#connecting-to-telegram).
+
+## License
+
+[See](LICENSE).

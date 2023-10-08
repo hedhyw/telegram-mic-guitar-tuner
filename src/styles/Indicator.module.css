@@ -1,0 +1,72 @@
+.indicator {
+  --radius: 150px;
+  --indicator-color: var(--tg-theme-link-color, rgb(105, 205, 255));
+
+  width: calc(var(--radius) + 20px);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicatorMain {
+  width: var(--radius);
+}
+
+.indicatorCircle {
+  --size: 10%;
+
+  width: var(--radius);
+  height: var(--radius);
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side,
+      var(--background-seconday) calc(100% - var(--size) * 2),
+      var(--indicator-color) calc(100% - var(--size) * 2 + 5%),
+      transparent calc(100% - var(--size) * 2) 100%),
+    conic-gradient(var(--indicator-color) var(--size), var(--foreground-color) 0);
+  position: relative;
+  transition: rotate ease 0.6s;
+  box-shadow: 0 0 16px var(--indicator-color);
+}
+
+.indicatorArrowDown {
+  --size: 10px;
+
+  width: 0;
+  height: 0;
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+
+  border-top: var(--size) solid var(--indicator-color);
+  margin-left: calc(75px - var(--size) * 1.5);
+  top: -7px;
+
+  position: relative;
+}
+
+.indicatorText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18pt;
+  font-weight: bold;
+  width: var(--radius);
+  height: var(--radius);
+  margin-top: -150px;
+  position: relative;
+}
+
+.indicatorHint {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.noteUnknown {
+  font-size: 32pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

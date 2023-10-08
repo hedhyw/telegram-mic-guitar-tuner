@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  frontend:
+    image: telegram-mic-guitar-tuner
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+  telegrambot:
+    image: telegram-mic-guitar-tuner
+    command: ["run", "bot"]
+    restart: unless-stopped
+    environment:
+      TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"

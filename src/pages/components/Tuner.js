@@ -60,19 +60,33 @@ export default class Tuner extends React.Component {
   }
 
   componentDidMount() {
+    const constraints = { video: false, audio: true };
+    const failureCallback = (err) => {
+      this._setPermissionDenied();
+      console.error(err);
+    };
+
     // Configure the audio stream from the microphone.
+    if (navigator?.mediaDevices?.getUserMedia) {
+      navigator?.mediaDevices
+        ?.getUserMedia(constraints)
+        .then((stream) => { this._audioCallback(stream); })
+        .catch(failureCallback);
+
+      return;
+    }
+
+    // Legacy.
     navigator.getUserMedia = navigator?.getUserMedia
       || navigator?.webkitGetUserMedia
-      || navigator?.mozGetUserMedia;
+      || navigator?.mozGetUserMedia
+      || navigator?.mediaDevices?.getUserMedia;
 
     if (navigator?.getUserMedia) {
       navigator?.getUserMedia(
-        { video: false, audio: true },
+        constraints,
         (stream) => this._audioCallback(stream),
-        (err) => {
-          this._setPermissionDenied();
-          console.error(err);
-        },
+        failureCallback,
       );
     } else {
       this._setPermissionDenied();

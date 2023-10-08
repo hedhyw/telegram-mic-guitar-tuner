@@ -10,10 +10,6 @@ You can try it:
 - send the following link to any Telegram chat: https://t.me/micguitartunerbot/app.
 - or, send any message to [@micguitartunerbot](https://t.me/micguitartunerbot).
 
-> It has been tested on an Android device.
-> 
-> If you don't have one, you can try the application on [tuner.ocmoxa.com](https://tuner.ocmoxa.com).
-
 ## Features
 
 - Adjusting the frequency using the microphone.
@@ -22,7 +18,7 @@ You can try it:
 
 ## Known issues
 
-- Some Telegram clients may not support microphone access.
+- Some Telegram clients may not support microphone access (mobile devices should work).
 
 ## Getting Started
 

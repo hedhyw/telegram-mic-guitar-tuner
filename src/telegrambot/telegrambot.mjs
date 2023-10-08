@@ -26,7 +26,7 @@ Currently, it supports only the standart tuning:
 Open the following link to start: https://t.me/micguitartunerbot/app
 
 ⚠️ Not all Telegram clients support access to a microphone; the application cannot work in this case.
-⚠️ Android devices should have support.
+⚠️ Mobile devices should have support.
 ⚠️ Make sure there is no background noise.
 
 The bot does not collect any usage information and it is open-source: <a href="https://github.com/hedhyw/telegram-mic-guitar-tuner">Github</a>.

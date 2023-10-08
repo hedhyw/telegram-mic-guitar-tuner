@@ -6,6 +6,10 @@ to correctly adjust each string.
 
 ![Demo animation](src/assets/demo.webp)
 
+You can try it:
+- send the following link to any Telegram chat: https://t.me/micguitartunerbot/app.
+- or, send any message to [@micguitartunerbot](https://t.me/micguitartunerbot).
+
 ## Features
 
 - Adjusting the frequency using the microphone.

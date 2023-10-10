@@ -1,7 +1,6 @@
 # Telegram Mic Guitar Tuner
 
-This is a Telegram mini-app that helps guitarists tune their guitars. It uses
-the microphone to determine the frequency of the sound and help you
+[@micguitartunerbot](https://t.me/micguitartunerbot) is a Telegram Mini App that helps guitarists tune their guitars. It uses the microphone to determine the frequency of the sound and help you
 to correctly adjust each string.
 
 ![Demo animation](src/assets/demo.webp)

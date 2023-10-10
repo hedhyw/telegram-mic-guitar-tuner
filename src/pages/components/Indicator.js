@@ -2,7 +2,6 @@ import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import lo from 'lodash';
 import styles from '@/styles/Indicator.module.css';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import getStandartTuning from '@/common/notes';
 
 // FULL_CIRCLE is the radius of the full circle in degrees. It should not be changed.
 const FULL_CIRCLE = 360;

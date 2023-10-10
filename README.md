@@ -3,7 +3,7 @@
 [@micguitartunerbot](https://t.me/micguitartunerbot) is a Telegram Mini App that helps guitarists tune their guitars. It uses the microphone to determine the frequency of the sound and help you
 to correctly adjust each string.
 
-![Demo animation](src/assets/demo.webp)
+<img alt="Demo animation" src=src/assets/demo.webp width=200>
 
 You can try it:
 - send the following link to any Telegram chat: https://t.me/micguitartunerbot/app.
